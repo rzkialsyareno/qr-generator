@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (text) {
       qrCodeContainer.innerHTML = "";
 
-      const qr = qrcode(0, "L");
+      const qr = qrcode(0, "H");
       qr.addData(text);
       qr.make();
-      const qrImage = qr.createImgTag(8);
+      const qrImage = qr.createImgTag(10, 0);
       qrCodeContainer.innerHTML = qrImage;
       currentQrImage = qrCodeContainer.querySelector("img");
 
