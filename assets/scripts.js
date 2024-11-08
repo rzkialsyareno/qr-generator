@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (text) {
       qrCodeContainer.innerHTML = "";
 
-      const qr = qrcode(0, "H");
+      const qr = qrcode(0, "L");
       qr.addData(text);
       qr.make();
-      const qrImage = qr.createImgTag(10, 0);
+      const qrImage = qr.createImgTag(8);
       qrCodeContainer.innerHTML = qrImage;
       currentQrImage = qrCodeContainer.querySelector("img");
 
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentQrImage) {
       const link = document.createElement("a");
       link.href = currentQrImage.src;
-      link.download = "qr_code_fullscreen.png";
+      link.download = "qr_code.png";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
